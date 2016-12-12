@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.oracle.homework.maxim.nesen.streamcombiner</groupId>
+    <artifactId>streamcombiner</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>sender</module>
+        <module>receiver</module>
+        <module>runner</module>
+        <module>common</module>
+    </modules>
+    <name>streamcombiner</name>
+    <url>http://maven.apache.org</url>
+
+    <repositories>
+        <repository>
+            <id>oss.sonatype.org</id>
+            <name>OSS Sonatype Staging</name>
+            <url>https://oss.sonatype.org/content/groups/staging</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>mojo.codehaus.org</id>
+            <url>http://central.maven.org/maven2</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <properties>
+        <java.target>1.7</java.target>
+    </properties>
+
+
+
+    <dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>eclipselink</artifactId>
+            <version>2.6.4</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commonj.sdo</artifactId>
+                    <groupId>commonj.sdo</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>jaxb2-maven-plugin</artifactId>
+            <version>2.2</version>
+        </dependency>
+    </dependencies>
+    </dependencyManagement>
+</project>
